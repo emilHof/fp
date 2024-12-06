@@ -9,6 +9,7 @@ from math import inf
 """
 Approximate solution taken from Nearest neighbor algorithm.
 [Nearest neighbour algorithm](https://en.wikipedia.org/wiki/Nearest_neighbour_algorithm)
+This is a greedy solution as it is based on Kruskal's algorithm which is greedy.
 """
 def solution(edges):
     # first we create the graph
@@ -70,41 +71,21 @@ def solution(edges):
     return [W, PO]
 
 
-
-
-    # now try each ordering of the vertices
-    R = [inf, []]
-    for order in permutations(V, len(V)):
-        print(order)
-        order = list(order) + [list(order)[0]]
-        # now see if we can walk like this
-        r = 0
-        for u, v in pairwise(order):
-            if v not in G[u]:
-                r = inf
-                break
-            r += G[u][v]
-        if R[0] > r:
-            R = [r, order]
-    return R
-
-
-
+"""
+e = [
+    ("a", "b", 5), 
+    ("a", "c", 3),
+    ("a", "d", 2),
+    ("b", "c", 5), 
+    ("b", "d", 10), 
+    ("c", "d", 1), 
+]
 """
 [nv, ne] = [int(a) for a in input().split(" ")]
 e = []
 for _ in range(ne):
     [a, b, w] = input().split(" ")
     e.append((a, b, int(w)))
-"""
-e = [
-    ("a", "b", 3), 
-    ("a", "c", 10),
-    ("a", "d", 20),
-    ("b", "c", 4), 
-    ("b", "d", 5), 
-    ("c", "d", 5), 
-]
 r = solution(e)
 print(r[0])
 print(" ".join(r[1]))

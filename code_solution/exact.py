@@ -16,7 +16,6 @@ def solution(edges):
     # now try each ordering of the vertices
     R = [inf, []]
     for order in permutations(V, len(V)):
-        print(order)
         order = list(order) + [list(order)[0]]
         # now see if we can walk like this
         r = 0
@@ -32,20 +31,20 @@ def solution(edges):
 
 
 """
+e = [
+    ("a", "b", 5), 
+    ("a", "c", 3),
+    ("a", "d", 2),
+    ("b", "c", 5), 
+    ("b", "d", 10), 
+    ("c", "d", 1), 
+]
+"""
 [nv, ne] = [int(a) for a in input().split(" ")]
 e = []
 for _ in range(ne):
     [a, b, w] = input().split(" ")
     e.append((a, b, int(w)))
-"""
-e = [
-    ("a", "b", 3), 
-    ("a", "c", 10),
-    ("a", "d", 20),
-    ("b", "c", 4), 
-    ("b", "d", 5), 
-    ("c", "d", 5), 
-]
 r = solution(e)
 print(r[0])
 print(" ".join(r[1]))
