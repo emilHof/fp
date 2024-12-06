@@ -1,3 +1,7 @@
+"""
+Author: Emil Hofstetter
+Honor Code: All work herein adheres to the JMU honor code.
+"""
 from collections import defaultdict 
 from itertools import permutations, pairwise
 from math import inf

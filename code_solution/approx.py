@@ -1,7 +1,15 @@
+"""
+Author: Emil Hofstetter
+Honor Code: All work herein adheres to the JMU honor code.
+"""
 from collections import defaultdict, deque
 from itertools import permutations, pairwise
 from math import inf
-# this approximation assumes triangle inequality
+
+"""
+Approximate solution taken from Nearest neighbor algorithm.
+[Nearest neighbour algorithm](https://en.wikipedia.org/wiki/Nearest_neighbour_algorithm)
+"""
 def solution(edges):
     # first we create the graph
     G = defaultdict(dict)
