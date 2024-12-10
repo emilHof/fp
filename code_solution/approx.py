@@ -31,7 +31,6 @@ def solution(edges):
     def union(a, b):
         pa = find(a)
         pb = find(b)
-        print(a, b, pa, pb)
         if pa == pb:
             return False
 
@@ -80,7 +79,6 @@ e = [
     ("b", "d", 10), 
     ("c", "d", 1), 
 ]
-"""
 [nv, ne] = [int(a) for a in input().split(" ")]
 e = []
 for _ in range(ne):
@@ -89,6 +87,7 @@ for _ in range(ne):
 r = solution(e)
 print(r[0])
 print(" ".join(r[1]))
+"""
 
                 
 
